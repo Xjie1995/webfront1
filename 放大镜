@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        function f(obj,e){
+            $("#cont").show();
+            var x= e.clientX;
+            var y= e.clientY;
+            $("#big").attr("src",obj.src);
+            $("#big").css("left",-x*2);
+            $("#big").css("top",-y*2);
+        }
+        function f1(){
+            $("#cont").hide();
+        }
+    </script>
+</head>
+<body>
+    <img src="5.jpg" width="250" height="250" onmousemove="f(this,event)" onmouseout="f1()">
+    <div id="cont" style="position:relative; display:none; width:500px; height:500px; border:1px solid #000; overflow: hidden;">
+        <img id="big" style="position:absolute;">
+    </div>
+</body>
+</html>
